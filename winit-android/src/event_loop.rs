@@ -359,7 +359,7 @@ impl EventLoop {
                     let orientation = pointer.axis_value(Axis::Orientation);
                     let angle = event::TabletToolAngle {
                         altitude: (FRAC_PI_2 - tilt) as f64,
-                        azimuth: (orientation - FRAC_PI_2).rem_euclid(TAU) as f64,
+                        azimuth: (orientation + FRAC_PI_2).rem_euclid(TAU) as f64,
                     };
 
                     match action {
